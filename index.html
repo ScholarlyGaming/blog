@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scholarly Gaming - Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="header">Scholarly Gaming</div>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (window.innerWidth > 600) {
+          if (
+            document.body.scrollTop > 40 ||
+            document.documentElement.scrollTop > 40
+          ) {
+            document.getElementById("header").style.fontSize = "20px";
+          } else {
+            document.getElementById("header").style.fontSize = "50px";
+          }
+        } else {
+          if (
+            document.body.scrollTop > 40 ||
+            document.documentElement.scrollTop > 40
+          ) {
+            document.getElementById("header").style.fontSize = "18px";
+          } else {
+            document.getElementById("header").style.fontSize = "40px";
+          }
+        }
+      }
+    </script>
+    <div id="post-header">
+      <div class="center">
+        <div class="pagination">
+          <a class="active" href="#">Home</a>
+          <a href="post1.html">Post 1</a>
+          <!--<a href="#">Post 2</a>
+              <a href="#">Post 3</a>
+              <a href="#">Post 4</a>
+              <a href="#">Post 5</a>-->
+        </div>
+      </div>
+      <p>
+        Hi, and welcome to my blog! I'm a video game player and creator. Here,
+        I'll post some of my notes over what I've done with programming over the
+        years. I'll add some developer info about my projects, talk about my
+        backstory with programming, and provide a perspective on my percieved
+        meaning of life. Or something like that.
+      </p>
+      <!-- Slideshow container -->
+      <div class="focus-div">
+        <div class="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="Post1Banner.png" style="width: 100%;" />
+            <div class="text">Post 1: Starting from the Beginning</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="AlanaBannerStandard.png" style="width: 100%;" />
+            <div class="text">Project Alana</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="CRBannerStandard.png" style="width: 100%;" />
+            <div class="text">Clash Royale Engine</div>
+          </div>
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
+        <script>
+          var slideIndex = 1;
+          var auto = setInterval(addSlide, 5000);
+          showSlides(slideIndex);
+          // Next/previous controls
+          function addSlide() {
+            plusSlides(1);
+          }
+
+          function plusSlides(n) {
+            showSlides((slideIndex += n));
+            clearInterval(auto);
+            auto = setInterval(addSlide, 5000);
+          }
+
+          // Thumbnail image controls
+          function currentSlide(n) {
+            showSlides((slideIndex = n));
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+              slideIndex = 1;
+            }
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+          }
+        </script>
+
+        <!-- The dots/circles -->
+        <div style="text-align: center;">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+      <p>
+        I make posts periodically - my most recent post is "Starting from the
+        Beginning."
+      </p>
+      <blockquote cite="Post 1">
+        Hello, I’m SG, and welcome to my blog! It’s a work in progress, like…
+        well… most of my projects, and it’s going to be improved over time. But
+        I should probably start somewhere. And if I’m going to start somewhere,
+        I might as well start from the very beginning. So, how did I start
+        programming? First, I have a bit of explaining to do.
+      </blockquote>
+      <p>
+        You can look at all my posts here:
+      </p>
+      <div class="center">
+        <div class="pagination">
+          <a class="active" href="#">Home</a>
+          <a href="post1.html">Post 1</a>
+          <!--<a href="#">Post 2</a>
+          <a href="#">Post 3</a>
+          <a href="#">Post 4</a>
+          <a href="#">Post 5</a>-->
+        </div>
+      </div>
+      <div class="focus-div">
+        <h1>Projects</h1>
+      </div>
+      <div class="row">
+        <div class="column lefta sa">
+          <p>
+            Check out my
+            <a href="https://wg0pq.csb.app/index.html">Clash Royale Engine</a>,
+            made from the ground up in Khan Academy in fall/early winter 2019
+            and ported to Code Sandbox in late winter/spring 2020.
+          </p>
+          <p>
+            It's a highly technical project - Clash Royale pretty much runs
+            entirely on Supercell's servers, and having no affiliation with
+            Supercell, I have no knowledge about the server's inner workings.
+            This made it difficult to emulate the game, as I had to try to
+            replicate the results as close as possible.
+          </p>
+          <p>
+            In the end, however, I was able to replicate the game with fairly
+            high accuracy, and it was able to parse a replay from the official
+            game and get very close to the actual gameplay.
+          </p>
+        </div>
+
+        <div class="column righta sb">
+          <a href="https://wg0pq.csb.app/index.html"
+            ><div class="container">
+              <img
+                src="ClashRoyaleEngine.png"
+                alt="Clash Royale Engine project screenshot"
+                style="width: 100%;"
+                class="image-link"
+              />
+              <div class="middle">
+                <div class="link-info">Go to wg0pq.csb.app?</div>
+              </div>
+            </div></a
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="column lefta sb">
+          <a
+            href="https://www.khanacademy.org/computer-programming/project-alana/4752278631579648"
+            ><div class="container">
+              <img
+                src="Alana.PNG"
+                alt="Project Alana screenshot - Level 1"
+                style="width: 100%;"
+                class="image-link"
+              />
+              <div class="middle">
+                <div class="link-info">Go to Khan Academy?</div>
+              </div>
+            </div></a
+          >
+        </div>
+        <div class="column righta sa">
+          <p>
+            Or look at my original game
+            <a
+              href="https://www.khanacademy.org/computer-programming/project-alana/4752278631579648"
+              >Project Alana</a
+            >, a 40-level isometric platformer made in spring 2019. With custom
+            graphics and cutscenes as well as a focus on a story, this is
+            definitely my favorite game that I've built.
+          </p>
+          <p>
+            The gameplay focuses on using the character's tight controls and a
+            set of limited abilities to navigate different obstacles like moving
+            blocks, reverse gravity fields, ice, and a variety of enemies.
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <p><i> - Notes - </i></p>
+        <p>
+          Used some W3Schools templates as well as a blockquote template from
+          <a
+            style="color: white;"
+            href="https://codepen.io/harmputman/pen/IpAnb"
+            >https://codepen.io/harmputman/pen/IpAnb</a
+          >
+          - This content is not affiliated with, endorsed, sponsored, or
+          specifically approved by Supercell and Supercell is not responsible
+          for it. For more information see Supercell’s Fan Content Policy:
+          <a
+            style="color: white;"
+            href="https://www.supercell.com/fan-content-policy"
+            >www.supercell.com/fan-content-policy</a
+          >
+          - Khan Academy is copywrited, and I do not own nor claim to own this
+          copywrite.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
